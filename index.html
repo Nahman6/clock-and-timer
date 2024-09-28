@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>digital clock using javascript</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--stopwatch-->
+
+    <span class="head">Time?</span>
+
+    <div class="nam">
+      <div class="timer">Stopwatch</div>
+      <div id="container2">
+        <script src="index.js"></script>
+        <div id="watch">
+          <span id="minutes">00</span> : <span id="seconds">00</span> :
+          <span id="tens">00</span>
+
+          <button id="startBtn">Start</button>
+          <button id="pauseBtn">Pause</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+      </div>
+
+      <!--clock-->
+
+      <div class="time">Clock</div>
+      <div class="container">
+        <div class="clock">
+          <span id="hrs">00</span>
+          <!--makes sections of text so they can be easily designed-->
+          <span>:</span>
+          <span id="min">00</span>
+          <span>:</span>
+          <span id="sec">00</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let hrs = document.getElementById("hrs");
+      let min = document.getElementById("min");
+      let sec = document.getElementById("sec");
+
+      setInterval(() => {
+        let currentTime = new Date();
+        let formattedTime = currentTime.toLocaleTimeString("en-IN", {
+          hour12: true,
+        });
+        /*console.log(currentTime.getHours());*/
+        hrs.innerHTML =
+          (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+        min.innerHTML =
+          (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
+        sec.innerHTML =
+          (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+      }, 1000);
+    </script>
+  </body>
+</html>

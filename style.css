@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+/*CLOCK*/
+
+.nam {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #9333a4, #0d041ae1);
+  color: #fff;
+  position: relative;
+  background-size: cover;
+}
+
+.head {
+  position: relative;
+  color: #d9bede;
+  background: linear-gradient(180deg, #0d041ae1, #9333a4);
+  text-align: center;
+  vertical-align: text-top;
+  padding-right: 44.4%;
+  padding-left: 41%;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  font-size: 6em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-shadow: 1px 1px 1px #311f5f, 1px 2px 1px #22114e, 1px 3px 1px #22114e,
+    1px 4px 1px #22114e, 1px 5px 1px #22114e, 1px 6px 1px #22114e,
+    1px 7px 1px #22114e, 1px 8px 1px #22114e, 1px 9px 1px #22114e,
+    1px 10px 1px #22114e, 1px 18px 6px rgba(16, 16, 16, 0.4),
+    1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
+    1px 30px 60px rgba(16, 16, 16, 0.4);
+} /*vertical shadow, horizontal shadow, blur*/
+
+.container {
+  display: flex;
+  width: 600px;
+  height: 200px;
+  background: rgb(84, 50, 84);
+  color: #06060e;
+  top: 40%;
+  left: 25%;
+  transform: translate(-50%, -50%); /*center*/
+  position: absolute; /*center; relative puts it on the top idk why*/
+}
+
+.clock {
+  width: 100%;
+  height: 100%;
+  background: rgba(98, 35, 103, 0.885);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.container::before {
+  /*::before makes a pseudo element of the first child */
+  content: "";
+  width: 100px;
+  height: 100px;
+  background-color: #814b8b;
+  position: absolute;
+  border-radius: 5px;
+  left: -50px;
+  top: -50px;
+  z-index: -1; /*IMPORTANT*/
+}
+
+.container::after {
+  /*::before makes a pseudo element of the first child */
+  content: "";
+  width: 200px;
+  height: 200px;
+  background-color: #22114e;
+  position: absolute;
+  border-radius: 50%; /*circle*/
+  right: -100px;
+  bottom: -100px;
+  z-index: -1; /*IMPORTANT*/
+}
+
+.clock span {
+  width: 110px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  font-size: 100px;
+  filter: opacity(60%);
+}
+
+.clock span::after {
+  font-size: 16px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#hrs::after {
+  content: "HOURS";
+}
+#min::after {
+  content: "MINUTES";
+}
+#sec::after {
+  content: "SECONDS";
+}
+
+.time {
+  padding-left: 2.8em;
+  padding-top: 1em;
+  font-size: 6em;
+  color: #d9bede;
+  filter: opacity(70%);
+  font-style: normal;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+#container2 {
+  position: relative;
+  transform: translate(-0%, -66%);
+}
+
+/*TIMER*/
+button {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  background-color: #814b8b;
+  color: #06060e;
+  cursor: pointer;
+  font-size: 25px;
+  margin-top: 200px;
+  margin-left: 50px;
+}
+
+#watch {
+  font-size: 6em;
+  color: #06060e;
+  filter: opacity(60%);
+  text-align: center;
+  background-color: #817584;
+  width: 570px;
+  height: 199px;
+  padding-top: 40px;
+  background-color: #814b8b;
+  align-items: center;
+  transform: translate(145%, 106%);
+}
+#watch::after {
+  /*::before makes a pseudo element of the first child */
+  content: "";
+  width: 100px;
+  height: 100px;
+  background-color: #4f2c7a;
+  position: absolute;
+  border-radius: 50%; /*circle*/
+  left: -45px;
+  bottom: -50px;
+  z-index: -1; /*IMPORTANT*/
+}
+#watch::before {
+  /*::before makes a pseudo element of the first child */
+  content: "";
+  width: 150px;
+  height: 150px;
+  background-color: #22114e;
+  position: absolute;
+  border-radius: 5px;
+  right: -90px;
+  top: -90px;
+  z-index: -1; /*IMPORTANT*/
+}
+.timer {
+  padding-left: 9.4em;
+  padding-top: 20px;
+  padding-bottom: 0em;
+  font-size: 6em;
+  color: #d9bede;
+  filter: opacity(70%);
+  font-style: normal;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
